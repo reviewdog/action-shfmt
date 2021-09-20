@@ -1,6 +1,6 @@
-name: 'TODO: Run <linter-name> with reviewdog'
-description: 'TODO: 🐶 Run <linter-name> with reviewdog on pull requests to improve code review experience.'
-author: 'TODO: <your-name>'
+name: 'Run shfmt with reviewdog'
+description: '🐶 Run shfmt with reviewdog on pull requests to improve code review experience.'
+author: 'haya14busa'
 inputs:
   github_token:
     description: 'GITHUB_TOKEN'
@@ -12,9 +12,6 @@ inputs:
   level:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
-  reporter:
-    description: 'Reporter of reviewdog command [github-check,github-pr-review].'
-    default: 'github-check'
   filter_mode:
     description: |
       Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
@@ -28,33 +25,27 @@ inputs:
   reviewdog_flags:
     description: 'Additional reviewdog flags'
     default: ''
-  ### Flags for <linter-name> ###
-  locale:
-    description: '-locale flag of misspell. (US/UK)'
-    default: ''
+  ### Flags for shfmt ###
+  shfmt_flags:
+    description: 'flags for shfmt'
+    default: '-i 2 -ci'
 runs:
   using: 'composite'
   steps:
-    - uses: reviewdog/action-setup@v1
-      with:
-        reviewdog_version: v0.13.0
     - run: $GITHUB_ACTION_PATH/script.sh
       shell: bash
       env:
-        # INPUT_<VARIABLE_NAME> is not available in Composite run steps
-        # https://github.community/t/input-variable-name-is-not-available-in-composite-run-steps/127611
-        INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
-        INPUT_LEVEL: ${{ inputs.level }}
-        INPUT_REPORTER: ${{ inputs.reporter }}
-        INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
-        INPUT_FAIL_ON_ERROR: ${{ inputs.fail_on_error }}
-        INPUT_REVIEWDOG_FLAGS: ${{ inputs.reviewdog_flags }}
-        INPUT_ESLINT_FLAGS: ${{ inputs.eslint_flags }}
-        INPUT_WORKDIR: ${{ inputs.workdir }}
-        INPUT_TOOL_NAME: ${{ inputs.tool_name }}
+        INPUT_SHFMT_FLAGS: ${{ inputs.shfmt_flags }}
+    - uses: reviewdog/action-suggester@v1
+      with:
+        tool_name: shfmt
+        github_token: ${{ inputs.github_token }}
+        level: ${{ inputs.level }}
+        filter_mode: ${{ inputs.filter_mode }}
+        fail_on_error: ${{ inputs.fail_on_error }}
+        reviewdog_flags: ${{ inputs.reviewdog_flags }}
 
 # Ref: https://haya14busa.github.io/github-action-brandings/
-# TODO: update branding if you want.
 branding:
   icon: 'check'
   color: 'blue'
