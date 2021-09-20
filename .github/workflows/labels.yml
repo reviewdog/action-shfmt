@@ -6,6 +6,7 @@ on:
       - .github/workflows/labels.yml
     branches:
       - main
+  workflow_dispatch:
 jobs:
   label:
     name: Manage GitHub labels
