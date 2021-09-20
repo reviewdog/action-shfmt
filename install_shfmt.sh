@@ -307,7 +307,7 @@ BINDIR=${BINDIR:-./bin}
 PREFIX="$OWNER/$REPO"
 # use in logging routines
 log_prefix() {
-        echo "$PREFIX"
+  echo "$PREFIX"
 }
 OS=$(uname_os)
 ARCH=$(uname_arch)
