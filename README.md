@@ -2,7 +2,6 @@
 
 [![Test](https://github.com/reviewdog/action-shfmt/workflows/Test/badge.svg)](https://github.com/reviewdog/action-shfmt/actions?query=workflow%3ATest)
 [![reviewdog](https://github.com/reviewdog/action-shfmt/workflows/reviewdog/badge.svg)](https://github.com/reviewdog/action-shfmt/actions?query=workflow%3Areviewdog)
-[![depup](https://github.com/reviewdog/action-shfmt/workflows/depup/badge.svg)](https://github.com/reviewdog/action-shfmt/actions?query=workflow%3Adepup)
 [![release](https://github.com/reviewdog/action-shfmt/workflows/release/badge.svg)](https://github.com/reviewdog/action-shfmt/actions?query=workflow%3Arelease)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/reviewdog/action-shfmt?logo=github&sort=semver)](https://github.com/reviewdog/action-shfmt/releases)
 [![action-bumpr supported](https://img.shields.io/badge/bumpr-supported-ff69b4?logo=github&link=https://github.com/haya14busa/action-bumpr)](https://github.com/haya14busa/action-bumpr)
