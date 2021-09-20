@@ -7,7 +7,7 @@ fi
 
 echo '::group::🐶 Installing shfmt ... https://github.com/mvdan/sh'
 TEMP_PATH="$(mktemp -d)"
-$GITHUB_ACTION_PATH/install_shfmt.sh -b "${TEMP_PATH}"
+"${GITHUB_ACTION_PATH}/install_shfmt.sh" -b "${TEMP_PATH}"
 echo '::endgroup::'
 
 # shellcheck disable=SC2086
