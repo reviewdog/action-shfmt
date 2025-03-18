@@ -9,14 +9,14 @@ jobs:
     name: runner / shellcheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: haya14busa/action-cond@v1
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - uses: haya14busa/action-cond@94f77f7a80cd666cb3155084e428254fea4281fd # v1.2.1
         id: reporter
         with:
           cond: ${{ github.event_name == 'pull_request' }}
           if_true: "github-pr-review"
           if_false: "github-check"
-      - uses: reviewdog/action-shellcheck@v1
+      - uses: reviewdog/action-shellcheck@6e0e63d1750d02d761b3df0f2c5ba9f9ac4a9ed7 # v1.29.0
         with:
           reporter: ${{ steps.reporter.outputs.value }}
           level: warning
@@ -25,8 +25,8 @@ jobs:
     name: runner / actionlint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: reviewdog/action-actionlint@v1
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - uses: reviewdog/action-actionlint@e0d05810221e05b96002972e026a262f4d42ce57 # v1.65.1
         with:
           reporter: github-check
           level: warning
@@ -35,8 +35,8 @@ jobs:
     name: runner / misspell
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: reviewdog/action-misspell@v1
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - uses: reviewdog/action-misspell@18ffb61effb93b47e332f185216be7e49592e7e1 # v1.26.1
         with:
           reporter: github-check
           level: warning
@@ -46,8 +46,8 @@ jobs:
     name: runner / alex
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: reviewdog/action-alex@v1
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - uses: reviewdog/action-alex@d4ec03938e9ac6879fc91ef9a8c46777d0a35d44 # v1.15.1
         with:
           reporter: github-check
           level: warning
