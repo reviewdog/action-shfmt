@@ -36,7 +36,7 @@ runs:
       shell: bash
       env:
         INPUT_SHFMT_FLAGS: ${{ inputs.shfmt_flags }}
-    - uses: reviewdog/action-suggester@87d77977e46ff1b90917c96ee550ac2e297c71a2 # v1.20.1
+    - uses: reviewdog/action-suggester@4747dbc9f9e37adba0943e681cc20db466642158 # v1.21.0
       with:
         tool_name: shfmt
         github_token: ${{ inputs.github_token }}
