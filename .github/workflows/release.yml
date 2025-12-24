@@ -38,7 +38,7 @@ jobs:
           if_false: ${{ steps.bumpr.outputs.next_version }}
 
       # Create release.
-      - uses: shogo82148/actions-create-release@23f53983720ef0c8c73db148582eba2cb49c58cd # v1.7.6
+      - uses: shogo82148/actions-create-release@559c27ce7eb834825e2b55927c64f6d1bd1db716 # v1.8.1
         if: "steps.tag.outputs.value != ''"
         with:
           # This token is provided by Actions, you do not need to create your own token
