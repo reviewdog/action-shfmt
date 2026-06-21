@@ -41,7 +41,7 @@ inputs:
   ### Flags for shfmt ###
   shfmt_flags:
     description: 'flags for shfmt'
-    default: '-i 2 -ci'
+    default: ''
 ```
 
 ## Usage
