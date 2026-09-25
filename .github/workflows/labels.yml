@@ -15,6 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       - name: Manage labels
-        uses: lannonbr/issue-label-manager-action@e8dbcd8198e86a1e98d5372e55db976fed9ba6f7 # 4.0.0
+        uses: lannonbr/issue-label-manager-action@27295bcfbcb0c5480e9ab0d3b4b08ce5cd9d3bb9 # 5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
