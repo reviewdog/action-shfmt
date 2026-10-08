@@ -44,7 +44,7 @@ runs:
       shell: bash
       env:
         INPUT_SHFMT_FLAGS: ${{ inputs.shfmt_flags }}
-    - uses: reviewdog/action-suggester@2558ba17e65a9039e73764a73009fc05fef28a46 # v1.24.3
+    - uses: reviewdog/action-suggester@8219e3d2e54a63ddecf1318659aa541bd1fa7202 # v1.26.2
       with:
         tool_name: shfmt
         github_token: ${{ inputs.github_token }}
