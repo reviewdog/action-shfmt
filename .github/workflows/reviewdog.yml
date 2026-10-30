@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.0
-      - uses: reviewdog/action-actionlint@v1.72.0
+      - uses: reviewdog/action-actionlint@v1.81.1
         with:
           reporter: github-check
           level: warning
