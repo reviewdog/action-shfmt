@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.0
-      - uses: reviewdog/action-misspell@v1.27.0
+      - uses: reviewdog/action-misspell@v1.30.4
         with:
           reporter: github-check
           level: warning
