@@ -5,7 +5,7 @@ version: 'v0.0.3'
 workflows:
     '.github/workflows/labels.yml':
         - 'actions/checkout@v7.0.0'
-        - 'lannonbr/issue-label-manager-action@4.0.0'
+        - 'lannonbr/issue-label-manager-action@5.0.0'
     '.github/workflows/release.yml':
         - 'actions/checkout@v7.0.0'
         - 'haya14busa/action-bumpr@v1.11.4'
@@ -43,9 +43,9 @@ dependencies:
         commit: 'sha1-7d2c558640ea49e798d46539536190aff8c18715'
         owner_id: 3797062
         repo_id: 225328382
-    'lannonbr/issue-label-manager-action@4.0.0':
-        ref: '4.0.0'
-        commit: 'sha1-e8dbcd8198e86a1e98d5372e55db976fed9ba6f7'
+    'lannonbr/issue-label-manager-action@5.0.0':
+        ref: '5.0.0'
+        commit: 'sha1-27295bcfbcb0c5480e9ab0d3b4b08ce5cd9d3bb9'
         owner_id: 3685876
         repo_id: 160574490
     'reviewdog/action-actionlint@v1.72.0':
