@@ -4,28 +4,28 @@
 version: 'v0.0.3'
 workflows:
     '.github/workflows/labels.yml':
-        - 'actions/checkout@v7.0.0'
+        - 'actions/checkout@v7.0.1'
         - 'lannonbr/issue-label-manager-action@4.0.0'
     '.github/workflows/release.yml':
-        - 'actions/checkout@v7.0.0'
+        - 'actions/checkout@v7.0.1'
         - 'haya14busa/action-bumpr@v1.11.4'
         - 'haya14busa/action-cond@v1.2.1'
         - 'haya14busa/action-update-semver@v1.5.1'
         - 'shogo82148/actions-create-release@v1.9.0'
     '.github/workflows/reviewdog.yml':
-        - 'actions/checkout@v7.0.0'
+        - 'actions/checkout@v7.0.1'
         - 'haya14busa/action-cond@v1.2.1'
         - 'reviewdog/action-actionlint@v1.72.0'
         - 'reviewdog/action-alex@v1.16.1'
         - 'reviewdog/action-misspell@v1.30.4'
         - 'reviewdog/action-shellcheck@v1.32.0'
     '.github/workflows/test.yml':
-        - 'actions/checkout@v7.0.0'
+        - 'actions/checkout@v7.0.1'
         - 'reviewdog/action-suggester@v1.24.3'
 dependencies:
-    'actions/checkout@v7.0.0':
-        ref: 'v7.0.0'
-        commit: 'sha1-9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
+    'actions/checkout@v7.0.1':
+        ref: 'v7.0.1'
+        commit: 'sha1-3d3c42e5aac5ba805825da76410c181273ba90b1'
         owner_id: 44036562
         repo_id: 197814629
     'haya14busa/action-bumpr@v1.11.4':
