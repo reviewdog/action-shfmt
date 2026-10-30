@@ -21,7 +21,7 @@ workflows:
         - 'reviewdog/action-shellcheck@v1.32.0'
     '.github/workflows/test.yml':
         - 'actions/checkout@v7.0.0'
-        - 'reviewdog/action-suggester@v1.24.3'
+        - 'reviewdog/action-suggester@v1.26.3'
 dependencies:
     'actions/checkout@v7.0.0':
         ref: 'v7.0.0'
@@ -80,9 +80,9 @@ dependencies:
         repo_id: 211116201
         uses:
             - 'reviewdog/action-setup@d8edfce3dd5e1ec6978745e801f9c50b5ef80252'
-    'reviewdog/action-suggester@v1.24.3':
-        ref: 'v1.24.3'
-        commit: 'sha1-2558ba17e65a9039e73764a73009fc05fef28a46'
+    'reviewdog/action-suggester@v1.26.3':
+        ref: 'v1.26.3'
+        commit: 'sha1-ac5ce6d94e35c00530447dc63c271e38e4fd36c6'
         owner_id: 48765237
         repo_id: 284627247
         uses:
