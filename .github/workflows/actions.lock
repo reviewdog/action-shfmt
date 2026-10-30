@@ -11,7 +11,7 @@ workflows:
         - 'haya14busa/action-bumpr@v1.11.4'
         - 'haya14busa/action-cond@v1.2.1'
         - 'haya14busa/action-update-semver@v1.5.1'
-        - 'shogo82148/actions-create-release@v1.9.0'
+        - 'shogo82148/actions-create-release@v1.9.3'
     '.github/workflows/reviewdog.yml':
         - 'actions/checkout@v7.0.0'
         - 'haya14busa/action-cond@v1.2.1'
@@ -87,8 +87,8 @@ dependencies:
         repo_id: 284627247
         uses:
             - 'reviewdog/action-setup@d8a7baabd7f3e8544ee4dbde3ee41d0011c3a93f'
-    'shogo82148/actions-create-release@v1.9.0':
-        ref: 'v1.9.0'
-        commit: 'sha1-6a396031bc74c57403da1018fec74d24c6aa03cd'
+    'shogo82148/actions-create-release@v1.9.3':
+        ref: 'v1.9.3'
+        commit: 'sha1-c172624cc9dcd7e0a2211b7337e6860b882fc030'
         owner_id: 1157344
         repo_id: 371301272
