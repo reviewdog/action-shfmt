@@ -11,4 +11,4 @@ TEMP_PATH="$(mktemp -d)"
 echo '::endgroup::'
 
 # shellcheck disable=SC2086
-"${TEMP_PATH}/shfmt" ${INPUT_SHFMT_FLAGS} -w .
+"${TEMP_PATH}/shfmt" ${INPUT_SHFMT_FLAGS} -w ${INPUT_PATH:-.}

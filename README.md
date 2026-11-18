@@ -42,6 +42,11 @@ inputs:
   shfmt_flags:
     description: 'flags for shfmt'
     default: ''
+  path:
+    description: |
+      Whitespace-separated files or directories for shfmt to format, relative to workdir.
+      Default is '.' (every shell script under workdir).
+    default: '.'
 ```
 
 ## Usage

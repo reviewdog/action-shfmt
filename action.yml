@@ -37,6 +37,11 @@ inputs:
   shfmt_flags:
     description: 'flags for shfmt'
     default: ''
+  path:
+    description: |
+      Whitespace-separated files or directories for shfmt to format, relative to workdir.
+      Default is '.' (every shell script under workdir).
+    default: '.'
 runs:
   using: 'composite'
   steps:
@@ -44,6 +49,7 @@ runs:
       shell: bash
       env:
         INPUT_SHFMT_FLAGS: ${{ inputs.shfmt_flags }}
+        INPUT_PATH: ${{ inputs.path }}
     - uses: reviewdog/action-suggester@2558ba17e65a9039e73764a73009fc05fef28a46 # v1.24.3
       with:
         tool_name: shfmt
