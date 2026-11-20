@@ -15,3 +15,20 @@ jobs:
       - name: check the exit code
         if: ${{ !success() }}
         run: echo 'The previous step should fail' && exit 1
+  test-path:
+    name: runner / shfmt (path)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: whitespace-only path skips shfmt
+        uses: ./
+        with:
+          path: ' '
+      - name: check nothing was formatted
+        run: git diff --exit-code
+      - name: path formats only the given file
+        uses: ./
+        with:
+          path: testdata/subdir/test.sh
+      - name: check only the given file was formatted
+        run: test "$(git diff --name-only)" = testdata/subdir/test.sh
