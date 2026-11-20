@@ -43,6 +43,7 @@ runs:
     - run: $GITHUB_ACTION_PATH/script.sh
       shell: bash
       env:
+        INPUT_WORKDIR: ${{ inputs.workdir }}
         INPUT_SHFMT_FLAGS: ${{ inputs.shfmt_flags }}
     - uses: reviewdog/action-suggester@2558ba17e65a9039e73764a73009fc05fef28a46 # v1.24.3
       with:
