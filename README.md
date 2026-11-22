@@ -42,6 +42,12 @@ inputs:
   shfmt_flags:
     description: 'flags for shfmt'
     default: ''
+  path:
+    description: |
+      Whitespace-separated files or directories for shfmt to format, relative to workdir.
+      Default is '.' (every shell script under workdir).
+      An empty or whitespace-only value skips shfmt. Paths are not glob-expanded.
+    default: '.'
 ```
 
 ## Usage
@@ -56,4 +62,21 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: reviewdog/action-shfmt@c5e3ba7497c338866921924691aef4fa18bc1fe0 # v1.1.0
+```
+
+### Format only the files a pull request changed
+
+shfmt parses every file passed in `path`, whatever its extension, so filter the
+changed files to shell scripts. When none changed, `path` is empty and shfmt is skipped.
+
+```yaml
+      - uses: tj-actions/changed-files@9426d40962ed5378910ee2e21d5f8c6fcbf2dd96 # v47.0.6
+        id: changed
+        with:
+          files: |
+            **/*.sh
+            **/*.bash
+      - uses: reviewdog/action-shfmt@c5e3ba7497c338866921924691aef4fa18bc1fe0 # v1.1.0
+        with:
+          path: ${{ steps.changed.outputs.all_changed_files }}
 ```
